@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="/assets/style/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Base</title>
+        <link rel="shortcut icon" href="./assets/img/" type="image/x-icon">
+    </head>
+    <body>
+        <header  class = "wallet">
+            <div class="logo">
+                <span class = "colored" id = "cosmo">Cosmo</span><p id = "farm">Farm</p>
+            </div>
+            <div class="wallet-vals">
+                <p >Energy: <span class = "colored" id = "valEnergy">0</span></p>
+                <p>Clean Energy: <span class = "colored" id = "valClean">0</span></p>
+                <p>Ores: <span class = "colored" id = "valOre">0</span></p>
+                <p>CosmoCoin: <span class = "colored" id = "valMoney">0</span></p>
+            </div>
+            <div class="header-scroll">
+                <a onclick="top()" href="#home"><p>Home</p></a> 
+                <a href="#upgrades"><p>Upgrades</p></a>
+            </div>
+        </header>
+        <main id = home>
+            <div class="home-title">
+                <h2>Build your <span class = "colored">Empire</span></h2>
+           </div>
+            <div class="box-grid">
+                <div class="energy-box">
+                    <div class="energy-text">
+                        <h3 id="energy-title">Colect Energy</h3>
+                        <p id = "energy-sub">Collect dirt ennergy from your solar panels</p>
+                        <p id="energy-cost">(Free)</p>
+                        <button class = "button-box" onclick="getEnergy()">Collect Energy</button>
+                       
+                    </div>
+                     <div class="energy-img">
+                        <img src="./assets/img/solar-panel.svg" alt="">
+                    </div>
+                </div>
+
+
+                <div class="clean-box">
+                    <div class="clean-text">
+                        <h3 id="clean-title">Clean Energy</h3>
+                        <p id = "clean-sub">Cleans the dirty energies collected from your solar panels</p>
+                        <p id="clean-cost">(10 dirty energys)</p>
+                        <button class = "button-box" onclick="cleanE()">Clean Energy</button>
+                    </div>
+                    <div class="clean-img">
+                        <img src="./assets/img/clearenergy.svg" alt="">
+                    </div>
+                </div>
+
+                
+                <div class="ore-box">
+                    <div class="ore-text">
+                        <h3 id="ore-title">Mine Ores</h3>
+                        <p id = "ore-sub">Extract ores from the planet undergrounds using your clean energy</p>
+                        <p id="ore-cost">(5 clean energys)</p>
+                        <button class = "button-box" onclick="getOres()">Mine Ores</button>
+                    </div>
+                    <div class="ore-img">
+                        <img src="./assets/img/ores.svg" alt="">
+                    </div>
+                </div>
+
+
+                <div class="money-box">
+                    <div class="money-text">
+                        <h3 id="money-title">Sell Ores</h3>
+                        <p id = "money-sub">Sell your ores for money to the space station</p>
+                        <p id="money-cost">(1 ore = 5 CosmoCoin)</p>
+                        
+                        
+                        <div class="ore-qnt">
+                            <button onclick="sellOres(event)" id = "sell-1">1x</button>
+                            <button onclick="sellOres(event)" id = "sell-10">10x</button>
+                            <button onclick="sellOres(event)" id = "sell-all">All</button>
+                        </div>
+                    </div>
+                    <div class="money-img">
+                        <img src="./assets/img/money.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <div class="upgrades" id = "upgrades">
+            <div class="upgrades-title">
+                 <h2><span class = "colored">Upgrades</span> Area</h2>
+            </div>
+            <div class="upgrade-grid">
+                    <div class="pannelUp-box">
+                        <div class="pannelUp-text">
+                            <h3 id="pannelUp-title">Better Solar Pannels</h3>
+                            <p id = "pannelUp-sub">Upgrade your solar panels so they collect 20% more energy</p>
+                            <p id="pannelUp-cost">(10 CosmoCoins)</p>
+                            <button class = "button-box" onclick="upgradeSolar()">Upgrade Solar Panels</button>
+                           
+                        </div>
+                         <div class="pannelUp-img">
+                            <img src="./assets/img/betterPannel.svg" alt="">
+                        </div>
+                
+            </div>
+            <div class="cleanUp-box">
+                <div class="cleanUp-text">
+                    <h3 id="cleanUp-title">Better Cleaning System</h3>
+                    <p id = "cleanUp-sub">Upgrade your energy cleaning system so they clean 30% more energy</p>
+                    <p id="cleanUp-cost">(40 CosmoCoins and 10 Ores)</p>
+                    <button class = "button-box" onclick="upgradeClean()">Upgrade Cleaning System</button>  
+                 </div>
+                 <div class="energy-img">
+                    <img src="./assets/img/betterClean.svg" alt="">
+                </div>
+            </div>  
+            <div class="oreUp-box">
+                <div class="oreUp-text">
+                    <h3 id="oreUp-title">Better Mining Machines</h3>
+                    <p id = "oreUp-sub">Upgrade your mining machines so they collect 15% more ores</p>
+                    <p id="oreUp-cost">(100 CosmoCoins and 30 clean energys)</p>
+                    <button class = "button-box" onclick="upgradeOre()">Upgrade Mining Machines</button>
+                </div>
+
+                 <div class="oreUp-img">
+                    <img src="./assets/img/betterOre.svg" alt="">
+                </div>
+    
+            </div>
+            <div class="rebirth-box">
+                <div class="rebirth-text">
+                    <h3 id="rebirth-title">Rebirth</h3>
+                    <p id = "rebirth-sub">Build a spaceship and travel to another planet with more valuable things</p>
+                    <p id="rebirth-cost">(10000 CosmoCoins, 10000 ores and 5000 clean energys)</p>
+                    <button class = "button-box" onclick="rebirth()">Rebirth!</button>  
+                </div>
+                <div class="rebirth-img">
+                    <img onclick="rebirth()" src="./assets/img/betterPannel.svg" alt="">
+                </div>
+            </div>
+
+
+
+            </div>
+    
+        </div>
+        <script src="./assets/script/script.js"></script>
+    </body>
+</html>  
