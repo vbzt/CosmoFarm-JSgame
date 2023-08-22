@@ -1,0 +1,30 @@
+::-webkit-scrollbar-thumb {
+  background-color: $colorido;
+}
+  
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: $cor-fundo;
+}
+
+* {
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-style: normal;
+  font-family: 'Poppins';
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  resize: none;
+  outline: none;
+  border: 0;
+  color: $cor-texto;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}

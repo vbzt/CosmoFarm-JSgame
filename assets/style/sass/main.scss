@@ -1,0 +1,428 @@
+@import "variables";
+@import "fonts";
+@import "mixin";
+@import "global";
+
+/* Header */
+.wallet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include around(row);
+    width: 100%;
+    height: 10%;
+    backdrop-filter: blur(1px);
+    background-color: $cor-fundo;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+
+
+.wallet.hidden {
+    transform: translateY(-100%);
+}
+
+        .logo{
+            @include flex(row)
+        }
+       
+        .wallet-vals{
+            @include around(row);
+            min-width: 40%;
+                
+         
+        }
+        .wallet-vals p{ 
+            font-size: 2.4vh;
+            margin-left: 0.1%;
+            font-weight: 600;
+            color: $cor-texto;
+        }
+        #cosmo{font-size: 1.25rem;
+            color: $colorido;
+            font-weight: 600
+        }
+        #farm{
+            font-size: 1.2rem;
+            color: $cor-texto;
+            font-weight: 600
+        }
+        .header-scroll{
+            @include flex(row);
+                a{
+                    font-size: 1.15rem;
+                    margin-left: 19%;
+                    font-weight: 600
+                }
+
+        }
+       
+}   
+html{
+    background-color: $cor-fundo
+}
+
+/* Main Area */
+main {
+    @include flex(column);
+    height: 95%;
+    width: 100%;
+    background-color: $cor-fundo;
+        .home-title{
+            font-size: 1.2rem;
+            margin-bottom: 3%;
+            margin-top: 2%;
+        }
+    
+}
+/* Main Area */
+
+
+/* display grid */
+.box-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6vh;
+    row-gap: 6vh;
+    height: 70%;
+    width: 80%;
+
+    
+}
+/* display grid */
+
+/* Items Box */
+.energy-box, .clean-box, .ore-box, .money-box, .pannelUp-box, .cleanUp-box, .oreUp-box, .rebirth-box{
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    @include flex(row);
+    width: 100%;
+    height: 100%;
+    background-color: $cor-secundaria;
+    border-radius: 7px;
+
+    .energy-text, .clean-text, .ore-text, .money-text, .pannelUp-text, .cleanUp-text, .oreUp-text, .rebirth-text{
+        width: 100%;
+        height: 100%;
+        @include flex(column);
+        font-size: 1.2rem;
+
+            #energy-title, #clean-title, #ore-title, #money-title, #pannelUp-title, #cleanUp-title, #oreUp-title, #rebirth-title{
+                border-bottom: 2px solid $colorido;
+                margin-bottom: 2rem;
+              
+            }
+            .button-box{
+                min-width: 50%;
+                padding: 10px;
+                font-size: 1rem;
+                font-weight: 500;
+                background-color: $colorido;
+                border-radius: 3px;
+                cursor: pointer;
+                margin-top: 2rem;
+            }
+            .button-box:hover{
+                background-color: $colorido-hover;
+            }
+            p{
+                color: $cinza-claro ;
+                font-size: 0.9rem;
+                font-weight: 600;
+                width: 65%;
+            }
+
+            #ore-sub, #clean-sub, #energy-sub, #money-sub, #pannelUp-sub, #cleanUp-sub, #oreUp-sub, #rebirth-sub{
+                margin-bottom: 1%;
+                min-width: 10%;
+                max-width: 100%;
+            }
+            
+    }   
+   
+    .energy-img, .clean-img, .ore-img, .money-img, .pannelUp-img, .cleanUp-img, .oreUp-img, .rebirth-img{
+        background-color: $cor-fundo;
+        height: 95%;
+        width: 75%;
+        border: 3px solid #272731;
+        padding: 1.4rem;
+        border-radius: 7px;
+        @include flex(row);
+
+        img{ 
+            max-height: 200px;
+            max-width: 100%;
+        }
+
+    }
+
+    .ore-qnt{
+        width: 100%;
+        margin-top: 2rem;
+        @include around(row);
+        
+    }
+        .ore-qnt button{ 
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            background-color: $colorido;
+            color: $cor-texto;
+            border: 1px solid transparent;      
+            width: 20%;
+            padding: 10px;
+            
+        }
+        .ore-qnt button:hover{
+            background-color: $colorido-neon;
+        }
+}
+
+/* Upgrades Area*/
+.upgrades{
+    @include flex(column);
+    height: 100%;
+    width: 100%;
+    background-color: $cor-fundo;
+        .upgrades-title{
+            font-size: 1.2rem;
+            margin-bottom: 3%;
+        }
+        
+    
+}
+
+.upgrade-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6vh;
+    row-gap: 6vh;
+    height: 75%;
+    width: 85%;
+}
+
+.alerta {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 25px;
+    background-color: #1f1f1f;
+    border: 2px solid $colorido;
+    border-radius: 4px;
+    max-width: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.colored{
+    color: $colorido-neon;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .wallet {
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include flex(row);
+        width: 100%;
+        height: 5%;
+        background-color: transparent;
+      
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(0);
+    
+    
+    .wallet.hidden {
+        transform: translateY(-100%);
+    }
+    
+
+           
+            .wallet-vals{
+                width: 70%;
+                
+            }
+            .wallet-vals p{ 
+                margin-left: 0.2%;
+                @include flex(row);
+                font-size: 0.5rem;
+                font-weight: 600;
+                color: $cor-texto;
+            }
+            #cosmo{
+                
+                font-size: 0.5rem;
+                color: $colorido;
+                font-weight: 700
+            }
+            #farm{
+                font-size: 0.5rem;
+                color: $cor-texto;
+                font-weight: 700
+            }
+            .header-scroll{      
+                    a{
+                        margin-left: 1%;
+                        font-size: 0.5rem;
+                        font-weight: 600;
+                        
+                        
+                    }
+    
+            }
+           
+    } 
+    main {
+        @include flex(column);
+        height: 100%;
+        width: 100%;
+        background-color: $cor-fundo;
+            .home-title{
+                display: flex;
+                align-items: end;
+                margin-top: 1rem;
+                height: 5%;
+                font-size: 0.6rem;
+              
+            }
+        
+    }
+    .box-grid, .upgrade-grid{
+        @include flex(column);
+        height: 90%;
+        width: 100%;
+    
+        
+    }
+
+    .energy-box, .clean-box, .ore-box, .money-box, .pannelUp-box, .cleanUp-box, .oreUp-box, .rebirth-box{
+    
+        display: flex;
+        align-items: center;
+        @include flex(row);
+        width: 90%;
+        height: 50%;
+        background-color: $cor-secundaria;
+        border-radius: 7px;
+    
+        .energy-text, .clean-text, .ore-text, .money-text, .pannelUp-text, .cleanUp-text, .oreUp-text, .rebirth-text{
+            width: 100%;
+            height: 100%;
+            @include flex(column);
+            font-size: 0.5rem;
+    
+                #energy-title, #clean-title, #ore-title, #money-title, #pannelUp-title, #cleanUp-title, #oreUp-title, #rebirth-title{
+                    font-size: 0.5rem;
+                    border-bottom: 2px solid $colorido;
+                    margin-bottom:0.2rem;
+                  
+                }
+                .button-box{
+                    min-width: 50%;
+                    padding: 10px;
+                    font-size: 0.5rem;
+                    font-weight: 500;
+                    background-color: $colorido;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    margin-top: 0.5rem;
+                }
+                .button-box:hover{
+                    background-color: $colorido-hover;
+                }
+              
+    
+                #ore-sub, #clean-sub, #energy-sub, #money-sub, #pannelUp-sub, #cleanUp-sub, #oreUp-sub, #rebirth-sub{
+                    margin-bottom: 1%;
+                    min-width: 10%;
+                    font-size: 0.5rem;
+                    max-width: 100%;
+                }
+                #ore-cost, #clean-cost, #energy-cost, #money-cost, #pannelUp-cost, #cleanUp-cost, #oreUp-cost, #rebirth-cost{
+                    margin-bottom: 1%;
+                    min-width: 10%;
+                    font-size: 0.5rem;
+                    max-width: 100%;
+                }
+        }   
+       
+        .energy-img, .clean-img, .ore-img, .money-img, .pannelUp-img, .cleanUp-img, .oreUp-img, .rebirth-img{
+            background-color: $cor-fundo;
+            height: 95%;
+            width: 75%;
+            border: 3px solid #272731;
+            padding: 1.4rem;
+            border-radius: 7px;
+            @include flex(row);
+    
+            img{ 
+                
+                min-width: 100%;
+            }
+    
+        }
+    
+        .ore-qnt{
+            width: 100%;
+            margin-top: 0.4rem;
+            @include around(row);
+            
+        }
+            .ore-qnt button{ 
+                border-radius: 3px;
+                font-size: 0.6rem;
+                cursor: pointer;
+                text-align: center;
+                background-color: $colorido;
+                color: $cor-texto;
+                border: 1px solid transparent;      
+                width: 20%;
+                padding: 10px;
+                
+            }
+            .ore-qnt button:hover{
+                background-color: $colorido-neon;
+            }
+    }
+    .upgrades{
+        @include flex(column);
+        height: 100%;
+        width: 100%;
+        background-color: $cor-fundo;
+            .upgrades-title{
+                display: flex;
+                align-items: center;
+                font-size: 0.6rem;
+                margin-bottom: 10%;
+                margin-top: 10%;
+            }
+            
+        
+    }
+    .alerta {
+        z-index: 1;
+        position: fixed;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3px 5px;
+        background-color: #1f1f1f;
+        border: 2px solid $colorido;
+        border-radius: 4px;
+        min-width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    
+}
+
