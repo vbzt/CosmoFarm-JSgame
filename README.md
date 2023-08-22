@@ -8,10 +8,9 @@
 5. I used figma to edit some of the SVGs used on the website 
 
 # 📑 Wanna test it out?
+cosmofarm-vercel.app
 
-CosmoFarm - (cosmofarm-vercel.app)
-
-#👀 A little spoiler from the project
+#📷 A little spoiler from the project
 
 ![image](https://github.com/ySunsh/CosmoFarm-JSgame/assets/124489579/923ff0d7-304e-40fa-8f15-5f6557695e85)
 
