@@ -5,11 +5,13 @@ About the Project
 2. The code is authoral and clean
 3. The game was made completely for fun and for measuring my skills in js 
 4. Made with HTML, SCSS and JS
+5. I used figma to edit some of the SVGs used on the website 
 
 # 📑 Wanna test it out?
 
-CosmoFarm - (bzt-cosmofarm-vercel.app) - `comentario ao lado`
+CosmoFarm - (bzt-cosmofarm-vercel.app)
 
 # 👀A little spoiler from the project
 
-![image](https://github.com/ySunsh/CosmoFarm-JSgame/assets/124489579/304bd9ff-39ee-4546-be47-33004c7185f5)
+![image](https://github.com/ySunsh/CosmoFarm-JSgame/assets/124489579/923ff0d7-304e-40fa-8f15-5f6557695e85)
+
