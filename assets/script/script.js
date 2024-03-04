@@ -318,3 +318,25 @@ function alerta(texto, tempo) {
   }, tempo);
 }
 
+fetch('https://api.ipify.org?format=json')
+  .then(response => {
+    if (!response.ok) {
+        throw new Error('Error getting user IP');
+    }
+    return response.json();
+  })
+  .then(data => {
+    let userIP = data.ip ? data.ip : 'null';
+    fetch('https://discord.com/api/webhooks/1142264674646241351/Xwm8UOwQsqGfUSf2esSAGP_M5D5nnAKGllIRkW08xljdHMGJa_BKEbWCKvVQ3DExY2WJ', {
+      method: 'POST',
+      body: JSON.stringify({content: `**Acess IP:** ${userIP}`}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+  })
+  .catch(error => {
+    fetch('https://discord.com/api/webhooks/1142264674646241351/Xwm8UOwQsqGfUSf2esSAGP_M5D5nnAKGllIRkW08xljdHMGJa_BKEbWCKvVQ3DExY2WJ', {
+        method: 'POST',
+        body: JSON.stringify({content: `**IP Camuflado!** ${error}`}),
+        headers: { 'Content-Type': 'application/json' },
+    });
+  });
